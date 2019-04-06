@@ -1,0 +1,46 @@
+/* Label */
+body, html {font-family: Arial}
+.form-group.form-md-line-input.form-md-floating-label .form-control.edited~label, .form-group.form-md-line-input.form-md-floating-label .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.form-control-static~label, .form-group.form-md-line-input.form-md-floating-label .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control[readonly]~label,
+.form-group.form-md-line-input .help-block
+{
+	font-size: 14px;
+}
+.form-group.form-md-line-input .help-block {margin-top: 5px; font-style: italic}
+label.form-label {
+	font-size: 16px !important;
+	display: block;
+}
+.CodeMirror {
+	margin-top: 6px;
+	font-size: 16px !important;
+}
+.tox-tinymce {
+	margin-top: 6px;
+	font-size: 16px;
+}
+.portlet.light>.portlet-title>.caption>.caption-subject {
+	text-transform: uppercase;
+}
+label.error {
+	float: left;
+	color: #ce0000 !important;
+	text-align: right;
+	border-bottom-color: #ce0000 !important;
+}
+input.error, textarea.error, select.error {
+	border-bottom-color: #ce0000 !important;
+}
+/* Dropzone */
+.dropzone-wp {
+	border: 2px dashed #ddd;
+	background-color: #f3f3f3;
+}
+.dropzone {
+	background-color: rgba(255,255,255,.10);
+	border: none;
+	min-height: auto;
+	padding: inherit;
+}
+.dz-preview {
+	display: none !important;
+}

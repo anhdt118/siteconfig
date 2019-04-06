@@ -1,0 +1,40 @@
+body,html {
+    font-family: Arial;
+}
+.pull-left {float: left;}
+.pull-right {float: right;}
+.relative {position: relative}
+.pointer {cursor: pointer}
+.title {
+    font-size: 24px;
+    line-height: 30px;
+}
+.sapo {
+    font-size: 16px;
+    line-height: 22px;
+}
+.title, .sapo, .post-content {
+    font-family: Arial;
+}
+.post-content img {
+    display: block;
+    clear: both;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+.post-content span,
+.post-content p,
+.post-content div,
+.post-content strong {
+    font-size: 14px !important;
+    line-height: 20px !important;
+}
+.image_center_wp {
+    text-align: center;
+}
+.image_caption {
+    font-style: italic;
+}
+#logo {
+    border-bottom: 1px solid #ddd; overflow: hidden; padding-bottom: 0px;
+}
