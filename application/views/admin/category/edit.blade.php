@@ -51,8 +51,8 @@
 	{!! form_open(site_url('category/save'), array('class' => 'has-validate')) !!}
 	{!! form_hidden('id', data_get($entity, '_id')) !!}
 	<div class="form-actions noborder form-group">
-		<button type="submit" class="btn blue">Save</button>
 		<a href="{{ site_url('category/index') }}" type="button" class="btn default">Back To List</a>
+		<button type="submit" class="btn blue">Save</button>
 	</div>
 	<div class="row">
 		<div class="col-md-9">
@@ -159,8 +159,8 @@
 			</div>
 			<!-- END SAMPLE FORM PORTLET-->
 			<div class="form-actions noborder">
-				<button type="submit" class="btn blue">Save</button>
 				<a href="{{ site_url('category/index') }}" type="button" class="btn default">Back To List</a>
+				<button type="submit" class="btn blue">Save</button>
 			</div>
 		</div>
 		<div class="col-md-3">

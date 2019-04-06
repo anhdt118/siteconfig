@@ -68,25 +68,25 @@
 						<thead>
 						<tr>
 							<th width="50px">ID</th>
-							<th>Name</th>
-							<th>URL</th>
+							<th width="300px">Name</th>
+							<th width="auto">URL</th>
 							<th>Is active</th>
 							<th>Actions</th>
 						</tr>
 						<tr>
 							<th colspan="2">
-								<input placeholder="Filter by name" type="text" class="form-control" name="filters[name][value]" type="hidden" value="" />
+								<input placeholder="Filter by name" type="text" class="form-control" name="filters[name][value]" type="hidden" value="{{ data_get(data_get($filters, 'name'), 'value') }}" />
 								<input type="hidden" name="filters[name][type]" value="text" />
 							</th>
 							<th>
-								<input type="text" class="form-control" name="filters[url][value]" type="hidden" value="" />
+								<input placeholder="Filter by url" type="text" class="form-control" name="filters[url][value]" type="hidden" value="{{ data_get(data_get($filters, 'url'), 'value') }}" />
 								<input type="hidden" name="filters[url][type]" value="text" />
 							</th>
 							<th>
-								<select name="filters[status][value]" class="form-control select2">
-									<option>-- All status --</option>
-									<option value="{{ MY_Model::VALUE_YES }}">Active</option>
-									<option value="{{ MY_Model::VALUE_NO }}">Deactive</option>
+								<select onchange="this.form.submit()" name="filters[status][value]" class="form-control select2">
+									<option @if (data_get(data_get($filters, 'status'), 'value')) selected @endif value="0">-- All status --</option>
+									<option @if (data_get(data_get($filters, 'status'), 'value') == MY_Model::VALUE_YES) selected @endif value="{{ MY_Model::VALUE_YES }}">Active</option>
+									<option @if (data_get(data_get($filters, 'status'), 'value') == MY_Model::VALUE_NO) selected @endif value="{{ MY_Model::VALUE_NO }}">Deactive</option>
 								</select>
 								<input type="hidden" name="filters[status][type]" value="equal" />
 							</th>
@@ -119,6 +119,10 @@
 							</td>
 						</tr>
 						@endforeach
+						@else
+						<tr>
+							<td align="center" colspan="5"><i>-- Not found any records matching your filters --</i></td>
+						</tr>
 						@endif
 						</tbody>
 					</table>

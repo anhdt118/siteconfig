@@ -196,6 +196,6 @@ class MY_Model extends CI_Model {
 				'sort' => $sorters
 			)
 		);
-		return $collection;
+		return $collection->toArray();
 	}
 }
