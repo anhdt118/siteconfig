@@ -20,7 +20,9 @@ class post_model extends MY_Model
 		if (empty($data['category_ids'])) {
 			$data['category_ids'] = array();
 		}
-		$data['publish_at'] = time();
+		if (isset($data['publish_at'])) {
+			$data['publish_at'] = format_date_time($data['publish_at']);
+		}
 		$data['updated_at'] = time();
 		return $data;
 	}

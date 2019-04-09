@@ -1,5 +1,11 @@
 <?php
 
+function format_date_time($str) {
+	$segments = explode(',', $str);
+	$date_parts = explode('/', trim($segments[0]));
+	return strtotime($date_parts[2] . '-' . $date_parts[1] . '-' . $date_parts[0] . ' ' . $segments[1]);
+}
+
 function render_to_alias($str)
 {
 	$str = str_replace(array('à', 'à', 'á', 'ạ', 'ả', 'ã', 'â', 'ầ', 'ấ', 'ậ', 'ẩ', 'ẫ', 'ă', 'ằ', 'ắ', 'ặ', 'ậ', 'ẳ', 'ẵ', 'á', 'À', 'Á', 'Ạ', 'Ả', 'Ã', 'Â', 'Ầ', 'Ấ', 'Ậ', 'Ẩ', 'Ẫ', 'Ă', 'Ằ', 'Ắ', 'Ặ', 'Ẳ', 'Ẵ'), 'a', $str);

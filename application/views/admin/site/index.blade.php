@@ -62,15 +62,38 @@
 				</div>
 			</div>
 			<div class="portlet-body form">
-				{!! form_open(site_url('site/save')) !!}
+				{!! form_open(site_url('site')) !!}
 				<div class="form-body">
 					<table class="table table-striped table-bordered table-hover order-column">
 						<thead>
 						<tr>
-							<th>ID</th>
-							<th>Name</th>
+							<th width="50px">ID</th>
+							<th width="300px">Name</th>
 							<th>URL</th>
 							<th>Status</th>
+							<th>Actions</th>
+						</tr>
+						<tr>
+							<th colspan="2">
+								<input placeholder="Filter by name" type="text" class="form-control" name="filters[name][value]" type="hidden" value="{{ data_get(data_get($filters, 'name'), 'value') }}" />
+								<input type="hidden" name="filters[name][type]" value="text" />
+							</th>
+							<th>
+								<input placeholder="Filter by url" type="text" class="form-control" name="filters[url][value]" type="hidden" value="{{ data_get(data_get($filters, 'url'), 'value') }}" />
+								<input type="hidden" name="filters[url][type]" value="text" />
+							</th>
+							<th>
+								<select onchange="this.form.submit()" name="filters[status][value]" class="form-control select2">
+									<option @if (data_get(data_get($filters, 'status'), 'value')) selected @endif value="0">-- All status --</option>
+									<option @if (data_get(data_get($filters, 'status'), 'value') == MY_Model::VALUE_YES) selected @endif value="{{ MY_Model::VALUE_YES }}">Active</option>
+									<option @if (data_get(data_get($filters, 'status'), 'value') == MY_Model::VALUE_NO) selected @endif value="{{ MY_Model::VALUE_NO }}">Deactive</option>
+								</select>
+								<input type="hidden" name="filters[status][type]" value="equal" />
+							</th>
+							<th>
+								<button type="submit" data-toggle="tooltip" title="Search" class="btn btn-primary"><i class="fa fa-search"></i></button>
+								<a data-toggle="tooltip" title="Reset filters" href="{{ site_url('site') }}" class="btn btn-default"><i class="fa fa-history"></i></a>
+							</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -89,6 +112,10 @@
 										<span class="box"></span>
 									</label>
 								</div>
+							</td>
+							<td>
+								<a data-toggle="tooltip" title="Edit row" href="{{ site_url('site/edit/id/' . data_get($entity, '_id')) }}" class="btn btn-primary"><i class="fa fa-cog"></i></a>
+								<a onclick="return window.confirm('Do you want to delete this record?')" data-toggle="tooltip" title="Delete row" href="{{ site_url('site/delete/id/' . data_get($entity, '_id')) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 							</td>
 						</tr>
 						@endforeach

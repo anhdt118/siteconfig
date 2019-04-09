@@ -33,7 +33,6 @@ class Category extends MY_Controller
 			$conditions = analyze_filters($filters);
 		}
 		$collection = $this->category_model->find_collection(null, null, $conditions);
-
 		$data = array(
 			'title' => 'Manage Categories',
 			'grid' => 'Categories',

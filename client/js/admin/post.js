@@ -1,4 +1,10 @@
 $(".select2").select2();
+$(".datetime-picker").datetimepicker({
+	format: "d/m/yyyy, HH:ii:ss",
+	showMeridian: true,
+	autoclose: true,
+	todayBtn: true
+});
 tinymce.init({
 	selector: '#content',
 	plugins: 'print preview fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount tinymcespellchecker a11ychecker imagetools textpattern help formatpainter permanentpen pageembed tinycomments mentions linkchecker',

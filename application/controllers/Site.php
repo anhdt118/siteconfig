@@ -4,7 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Site extends MY_Controller
 {
-
 	/**
 	 * Site constructor.
 	 */
@@ -26,11 +25,22 @@ class Site extends MY_Controller
 		$client_js[] = base_url() . 'themes/admin/theme/assets/global/plugins/datatables/datatables.min.js';
 		$client_js[] = base_url() . 'themes/admin/theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js';
 		$client_js[] = base_url() . 'themes/admin/theme/assets/pages/scripts/table-datatables-scroller.min.js';
-		$collection = $this->site_model->find_collection();
+
+		// Filters
+		$filters = $this->input->get_post('filters');
+		$conditions = array();
+		if ($filters) {
+			$conditions = analyze_filters($filters);
+		}
+		$collection = $this->site_model->find_collection(null, null, $conditions);
 		$data = array(
-			'title' => 'Manage Sites',
+			'title' => 'Manage Categories',
+			'grid' => 'Categories',
+			'filters' => $filters,
+			'conditions' => $conditions,
 			'collection' => $collection
 		);
+		
 		echo $this->blade->view()->make('admin/site/index', $data)->render();
 	}
 

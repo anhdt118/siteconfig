@@ -120,18 +120,12 @@
 								</div>
 							</div>
 							<div class="col-md-6">
-								<div class="form-group form-md-checkboxes">
-									<label class="control-label">Is published</label>
-									<div class="md-checkbox-list">
-										<div class="md-checkbox">
-											<input @if (data_get($entity, 'status') == MY_Model::VALUE_YES) checked @endif id="chk-status" type="checkbox" name="data[status]" value="1" class="md-check">
-											<label for="chk-status">
-												<span></span>
-												<span class="check"></span>
-												<span class="box"></span> Published
-											</label>
-										</div>
-									</div>
+								<div class="form-group">
+									<label>Published time</label>
+									{!! form_input(array(
+                                            'name' => 'data[publish_at]',
+                                            'value' => date('d/m/Y, H:i:s', data_get($entity, 'publish_at')),
+                                            'class' => 'form-control datetime-picker')) !!}
 								</div>
 							</div>
 						</div>
@@ -147,6 +141,24 @@
 									)) !!}
 									<label>Description</label>
 									<span class="help-block">Post description</span>
+								</div>
+							</div>
+							<div class="cl"></div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group form-md-checkboxes">
+									<label class="control-label">Is published</label>
+									<div class="md-checkbox-list">
+										<div class="md-checkbox">
+											<input @if (data_get($entity, 'status') == MY_Model::VALUE_YES) checked @endif id="chk-status" type="checkbox" name="data[status]" value="1" class="md-check">
+											<label for="chk-status">
+												<span></span>
+												<span class="check"></span>
+												<span class="box"></span> Published
+											</label>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="cl"></div>
