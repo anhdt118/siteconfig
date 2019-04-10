@@ -19,6 +19,7 @@
 <link href="{{ base_url() }}themes/admin/theme/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css" />
 <link href="{{ base_url() }}themes/admin/theme/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
 <link href="{{ base_url() }}themes/admin/theme/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+<link href="{{ base_url() }}themes/admin/custom.css" rel="stylesheet" type="text/css" />
 <!-- END THEME LAYOUT STYLES -->
 @if (!empty($client_css)): ?>
 @foreach ($client_css as $css)

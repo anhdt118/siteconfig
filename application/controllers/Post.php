@@ -36,8 +36,8 @@ class Post extends MY_Controller
 		}
 		$collection = $this->post_model->find_collection(null, null, $conditions);
 		$data = array(
-			'title' => 'Manage Categories',
-			'grid' => 'Categories',
+			'title' => 'Manage Posts',
+			'grid' => 'Posts',
 			'filters' => $filters,
 			'conditions' => $conditions,
 			'collection' => $collection
@@ -74,7 +74,7 @@ class Post extends MY_Controller
 
 		$data = array(
 			'entity' => new stdClass(),
-			'title' => 'Create new post',
+			'title' => 'Create New Post',
 			'categories' => $this->category_model->find_collection(null, null, array('status' => MY_Model::VALUE_YES))
 		);
 
@@ -117,7 +117,7 @@ class Post extends MY_Controller
 		if (empty($data['entity']->id)) {
 			return redirect(site_url('post/index'));
 		}
-		$data['title'] = (!empty($data['entity'])) ? data_get($data['entity'], 'name') : 'Manage posts';
+		$data['title'] = (!empty($data['entity'])) ? 'Edit [' . data_get($data['entity'], 'title') . ']' : 'Manage Posts';
 
 		echo $this->blade->view()->make('admin/post/edit', $data)->render();
 	}

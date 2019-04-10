@@ -32,10 +32,10 @@
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Search...">
 						<span class="input-group-btn">
-										<a href="javascript:;" class="btn submit">
-											<i class="icon-magnifier"></i>
-										</a>
-									</span>
+							<a href="javascript:;" class="btn submit">
+								<i class="icon-magnifier"></i>
+							</a>
+						</span>
 					</div>
 				</form>
 				<!-- END RESPONSIVE QUICK SEARCH FORM -->
@@ -80,6 +80,15 @@
 				<a href="{{ site_url('config') }}" class="nav-link">
 					<i class="icon-settings"></i>
 					<span class="title">System</span>
+				</a>
+			</li>
+			<li class="heading">
+				<h3 class="uppercase">GUI</h3>
+			</li>
+			<li class="nav-item">
+				<a href="{{ site_url('menu') }}" class="nav-link">
+					<i class="fa fa-bars"></i>
+					<span class="title">Menu</span>
 				</a>
 			</li>
 		</ul>

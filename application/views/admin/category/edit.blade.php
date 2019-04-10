@@ -91,6 +91,7 @@
 										'name' => 'data[name]',
 										'value' => data_get($entity, 'name'),
 										'autofocus' => true,
+										'placeholder' => 'Name',
 										'class' => 'form-control required')) !!}
 									<label>Name</label>
 									<span class="help-block">Name of website</span>
@@ -101,6 +102,7 @@
 									{!! form_input(array(
 										'name' => 'data[url]',
 										'value' => data_get($entity, 'url'),
+										'placeholder' => 'URL',
 										'class' => 'form-control')) !!}
 									<label >URL</label>
 									<span class="help-block">URL of category</span>
@@ -146,6 +148,7 @@
 										'class' => 'form-control required',
 										'rows' => 8,
 										'cols' => 50,
+										'placeholder' => 'Description about category',
 										'value' => data_get($entity, 'description')
 									)) !!}
 									<label>Description</label>

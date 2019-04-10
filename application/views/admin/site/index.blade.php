@@ -55,7 +55,7 @@
 			<div class="portlet-title">
 				<div class="caption font-green">
 					<i class="fa fa-cog font-green"></i>
-					<span class="caption-subject bold uppercase"> Websites</span>
+					<span class="caption-subject bold"> Websites</span>
 				</div>
 				<div class="actions">
 					<a class="btn blue" href="{{ site_url('site/create') }}"><i class="fa fa-plus"></i> Create new</a>

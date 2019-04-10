@@ -1,11 +1,13 @@
-/* Label */
-body, html {font-family: Arial}
+body, h1, h2, h3, h4, h5, h6, label {
+	font-family: Arial !important;
+}
 .form-group.form-md-line-input.form-md-floating-label .form-control.edited~label, .form-group.form-md-line-input.form-md-floating-label .form-control.focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control.form-control-static~label, .form-group.form-md-line-input.form-md-floating-label .form-control:focus:not([readonly])~label, .form-group.form-md-line-input.form-md-floating-label .form-control[readonly]~label,
-.form-group.form-md-line-input .help-block
+.form-group.form-md-line-input .help-block, .dd-item, .dd-empty, .dd-placeholder
 {
 	font-size: 14px;
 }
 .form-group.form-md-line-input .help-block {margin-top: 5px; font-style: italic}
+.form-group.form-md-line-input .form-control {font-size: 16px;}
 label.form-label {
 	font-size: 16px !important;
 	display: block;
@@ -19,7 +21,6 @@ label.form-label {
 	font-size: 16px;
 }
 .portlet.light>.portlet-title>.caption>.caption-subject {
-	text-transform: uppercase;
 }
 label.error {
 	float: left;
